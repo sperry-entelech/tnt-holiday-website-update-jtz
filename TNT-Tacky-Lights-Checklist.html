@@ -5,10 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TNT Limousine - Richmond Tacky Lights Checklist</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
         @media print {
             body {
                 margin: 0;
                 padding: 15px;
+                background: white;
+                color: #333;
             }
             .page-break {
                 page-break-after: always;
@@ -16,6 +20,12 @@
             input[type="checkbox"] {
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
+            }
+            .snowflake {
+                display: none;
+            }
+            .header {
+                background: #b91c1c !important;
             }
         }
 
@@ -26,170 +36,235 @@
         }
 
         body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.3;
-            color: #333;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.5;
+            color: #e5e5e5;
+            background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
             max-width: 8.5in;
             margin: 0 auto;
             padding: 0.5in;
-            background: white;
         }
 
         .header {
             text-align: center;
-            margin-bottom: 15px;
-            padding-bottom: 12px;
-            border-bottom: 3px solid #1e3a5f;
+            margin-bottom: 1.5rem;
+            padding: 2rem 1.5rem;
+            background: linear-gradient(135deg, #b91c1c 0%, #7f1d1d 100%);
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(185, 28, 28, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '✨ 🎄 ✨';
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1rem;
+            opacity: 0.5;
         }
 
         .header h1 {
-            font-size: 20pt;
-            color: #1e3a5f;
-            margin-bottom: 5px;
+            font-size: 1.75rem;
+            color: white;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
         }
 
         .header .subtitle {
-            font-size: 11pt;
-            color: #666;
-            font-style: italic;
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 400;
         }
 
         .stats-bar {
-            background: #f8f9fa;
-            padding: 10px;
-            border-radius: 4px;
-            margin-bottom: 15px;
+            background: rgba(185, 28, 28, 0.15);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
             text-align: center;
-            font-size: 10pt;
-            border: 2px solid #3498db;
+            font-size: 0.875rem;
+            border: 1px solid rgba(185, 28, 28, 0.3);
         }
 
         .stats-bar strong {
-            color: #e74c3c;
-            font-size: 14pt;
+            color: #fbbf24;
+            font-size: 1.5rem;
         }
 
         .instructions {
-            background: #fff3cd;
-            padding: 10px;
-            border-left: 4px solid #ffc107;
-            margin-bottom: 15px;
-            font-size: 9pt;
+            background: rgba(251, 191, 36, 0.1);
+            padding: 1rem;
+            border-left: 4px solid #fbbf24;
+            margin-bottom: 1.5rem;
+            font-size: 0.875rem;
+            border-radius: 6px;
         }
 
         .neighborhood-section {
-            margin-bottom: 18px;
+            margin-bottom: 1.5rem;
         }
 
         .neighborhood-header {
-            background: #1e3a5f;
+            background: linear-gradient(135deg, #1f1f1f 0%, #0f0f0f 100%);
             color: white;
-            padding: 6px 10px;
-            font-size: 11pt;
-            font-weight: bold;
-            margin-bottom: 8px;
-            border-radius: 3px;
+            padding: 0.75rem 1rem;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            border-radius: 8px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            border-left: 4px solid #b91c1c;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
         }
 
         .count-badge {
-            background: white;
-            color: #1e3a5f;
-            padding: 2px 8px;
-            border-radius: 10px;
-            font-size: 9pt;
+            background: #fbbf24;
+            color: #1a1a1a;
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 700;
         }
 
         .checklist-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 5px;
+            gap: 0.5rem;
         }
 
         .checklist-item {
             display: flex;
             align-items: flex-start;
-            padding: 5px;
-            border-bottom: 1px solid #eee;
-            font-size: 9pt;
+            padding: 0.75rem;
+            background: rgba(30, 30, 30, 0.6);
+            border-radius: 6px;
+            border-left: 2px solid #4b5563;
+            font-size: 0.875rem;
+            transition: all 0.3s ease;
+        }
+
+        .checklist-item:hover {
+            background: rgba(30, 30, 30, 0.8);
+            border-left-color: #b91c1c;
+            transform: translateX(2px);
         }
 
         .checklist-item input[type="checkbox"] {
-            margin-right: 8px;
+            margin-right: 0.75rem;
             margin-top: 2px;
-            width: 15px;
-            height: 15px;
+            width: 18px;
+            height: 18px;
             flex-shrink: 0;
             cursor: pointer;
+            accent-color: #b91c1c;
         }
 
         .address-text {
             flex: 1;
-            line-height: 1.4;
+            line-height: 1.5;
         }
 
         .address-main {
-            font-weight: bold;
-            color: #1e3a5f;
+            font-weight: 600;
+            color: white;
         }
 
         .address-zip {
-            color: #999;
-            font-size: 8pt;
+            color: #9ca3af;
+            font-size: 0.75rem;
         }
 
         .star {
-            color: #e74c3c;
-            margin-left: 4px;
+            color: #fbbf24;
+            margin-left: 0.25rem;
         }
 
         .notes-section {
-            margin-top: 15px;
-            padding: 10px;
-            background: #f8f9fa;
-            border: 2px solid #ddd;
-            border-radius: 4px;
+            margin-top: 2rem;
+            padding: 1.25rem;
+            background: rgba(30, 30, 30, 0.6);
+            border: 2px solid rgba(185, 28, 28, 0.3);
+            border-radius: 8px;
         }
 
         .notes-section h3 {
-            font-size: 10pt;
-            margin-bottom: 8px;
-            color: #1e3a5f;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            color: #fbbf24;
         }
 
         .notes-lines {
-            line-height: 1.8;
+            line-height: 2;
         }
 
         .notes-line {
-            border-bottom: 1px solid #ccc;
-            min-height: 20px;
-            margin-bottom: 8px;
+            border-bottom: 1px solid rgba(107, 114, 128, 0.3);
+            min-height: 24px;
+            margin-bottom: 0.75rem;
         }
 
         .footer {
-            margin-top: 20px;
-            padding-top: 10px;
-            border-top: 2px solid #ddd;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 2px solid rgba(185, 28, 28, 0.3);
             text-align: center;
-            font-size: 8pt;
-            color: #666;
+            font-size: 0.875rem;
+            color: #9ca3af;
+        }
+
+        .footer strong {
+            color: white;
+            font-weight: 600;
+            display: block;
+            margin-bottom: 0.75rem;
         }
 
         .progress-tracker {
-            background: #e8f5e9;
-            padding: 10px;
-            border-radius: 4px;
-            margin-top: 15px;
+            background: linear-gradient(135deg, rgba(185, 28, 28, 0.15) 0%, rgba(127, 29, 29, 0.15) 100%);
+            padding: 1.25rem;
+            border-radius: 8px;
+            margin-top: 1.5rem;
             text-align: center;
-            font-size: 10pt;
+            font-size: 0.875rem;
+            border: 1px solid rgba(185, 28, 28, 0.3);
         }
 
         .progress-tracker strong {
-            color: #27ae60;
+            color: #fbbf24;
         }
+
+        /* Subtle holiday snowflakes */
+        .snowflake {
+            position: fixed;
+            color: rgba(251, 191, 36, 0.12);
+            font-size: 1.2rem;
+            animation: fall 12s linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes fall {
+            0% { transform: translateY(-10vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+        }
+
+        .snowflake:nth-child(1) { left: 5%; animation-delay: 0s; }
+        .snowflake:nth-child(2) { left: 15%; animation-delay: 2s; }
+        .snowflake:nth-child(3) { left: 25%; animation-delay: 4s; }
+        .snowflake:nth-child(4) { left: 35%; animation-delay: 6s; }
+        .snowflake:nth-child(5) { left: 45%; animation-delay: 8s; }
+        .snowflake:nth-child(6) { left: 55%; animation-delay: 1s; }
+        .snowflake:nth-child(7) { left: 65%; animation-delay: 3s; }
+        .snowflake:nth-child(8) { left: 75%; animation-delay: 5s; }
+        .snowflake:nth-child(9) { left: 85%; animation-delay: 7s; }
+        .snowflake:nth-child(10) { left: 95%; animation-delay: 9s; }
 
         @media print {
             .checklist-grid {
@@ -199,8 +274,20 @@
     </style>
 </head>
 <body>
+    <!-- Subtle holiday snowflakes -->
+    <div class="snowflake">❄</div>
+    <div class="snowflake">✨</div>
+    <div class="snowflake">❄</div>
+    <div class="snowflake">✨</div>
+    <div class="snowflake">❄</div>
+    <div class="snowflake">✨</div>
+    <div class="snowflake">❄</div>
+    <div class="snowflake">✨</div>
+    <div class="snowflake">❄</div>
+    <div class="snowflake">✨</div>
+
     <div class="header">
-        <h1>🎄 Richmond Tacky Lights Checklist 🎄</h1>
+        <h1>Richmond Tacky Lights Checklist</h1>
         <div class="subtitle">Track Your Journey Through All 61 Locations!</div>
     </div>
 
@@ -710,9 +797,12 @@
     </div>
 
     <div class="footer">
-        <strong>TNT LIMOUSINE</strong> | Richmond's Tacky Lights Experts Since 2008<br>
-        Want the VIP experience? Book a professional tour! | 📞 [INSERT PHONE] | 🌐 www.tntlimo.com<br>
-        © 2024 TNT Limousine. Use year after year - displays may vary. Enjoy the lights!
+        <strong>TNT LIMOUSINE | Richmond's Tacky Lights Experts Since 2008</strong>
+        <p>Want the VIP experience? Book a professional tour!</p>
+        <p>📞 (804) 435-4225 | 🌐 tntlimousine.com | ✉️ sedan@tntauto.com</p>
+        <p style="margin-top: 10px; font-size: 0.75rem;">
+            © 2024 TNT Limousine. Use year after year - displays may vary. Enjoy the lights!
+        </p>
     </div>
 
     <script>
@@ -735,11 +825,6 @@
             const checked = document.querySelectorAll('input[type="checkbox"]:checked').length;
             console.log(`Progress: ${checked}/${total} locations visited`);
         }
-
-        // Auto-print functionality (uncomment if desired)
-        // window.onload = function() {
-        //     window.print();
-        // }
     </script>
 </body>
 </html>

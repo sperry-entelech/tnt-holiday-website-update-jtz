@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TNT Limousine - Richmond Tacky Lights Driver's Insider Guide</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
         @media print {
             body {
                 margin: 0;
@@ -22,174 +24,263 @@
         }
 
         body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.4;
-            color: #333;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: #e5e5e5;
+            background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
             max-width: 8.5in;
             margin: 0 auto;
             padding: 0.5in;
-            background: white;
         }
 
         .header {
             text-align: center;
-            margin-bottom: 20px;
-            padding-bottom: 15px;
-            border-bottom: 3px solid #1e3a5f;
+            margin-bottom: 2rem;
+            padding: 2.5rem 2rem;
+            background: linear-gradient(135deg, #b91c1c 0%, #7f1d1d 100%);
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(185, 28, 28, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '❄️ ✨ 🎄 ✨ ❄️';
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.2rem;
+            opacity: 0.6;
         }
 
         .header h1 {
-            font-size: 24pt;
-            color: #1e3a5f;
-            margin-bottom: 5px;
+            font-size: 2rem;
+            color: white;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
         }
 
         .header .subtitle {
-            font-size: 14pt;
-            color: #666;
-            font-style: italic;
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 400;
+            margin-bottom: 0.5rem;
         }
 
         .header .tagline {
-            font-size: 10pt;
-            color: #e74c3c;
-            font-weight: bold;
-            margin-top: 8px;
+            font-size: 0.875rem;
+            color: #fbbf24;
+            font-weight: 600;
+            margin-top: 0.5rem;
         }
 
         .intro-box {
-            background: #f8f9fa;
-            padding: 15px;
-            border-left: 4px solid #3498db;
-            margin-bottom: 20px;
-            font-size: 10pt;
+            background: rgba(30, 30, 30, 0.8);
+            padding: 1.5rem;
+            border-left: 4px solid #b91c1c;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
         }
 
         .intro-box strong {
-            color: #1e3a5f;
+            color: #fbbf24;
         }
 
         .legend {
-            background: #fff3cd;
-            padding: 12px;
-            border-radius: 4px;
-            margin-bottom: 15px;
-            font-size: 9pt;
+            background: rgba(185, 28, 28, 0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            font-size: 0.875rem;
+            border: 1px solid rgba(185, 28, 28, 0.3);
         }
 
         .legend-title {
-            font-weight: bold;
-            margin-bottom: 5px;
-            color: #856404;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: #fbbf24;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
         .legend-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 5px;
+            gap: 0.5rem;
+            color: #d1d5db;
         }
 
         .neighborhood-section {
-            margin-bottom: 25px;
+            margin-bottom: 2rem;
         }
 
         .neighborhood-header {
-            background: #1e3a5f;
+            background: linear-gradient(135deg, #1f1f1f 0%, #0f0f0f 100%);
             color: white;
-            padding: 8px 12px;
-            font-size: 13pt;
-            font-weight: bold;
-            margin-bottom: 10px;
-            border-radius: 3px;
+            padding: 1rem 1.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid #b91c1c;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
         }
 
         .location {
-            margin-bottom: 12px;
-            padding: 10px;
-            background: #f8f9fa;
-            border-left: 3px solid #3498db;
-            font-size: 9pt;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: rgba(30, 30, 30, 0.6);
+            border-left: 3px solid #4b5563;
+            font-size: 0.875rem;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .location:hover {
+            background: rgba(30, 30, 30, 0.8);
+            border-left-color: #b91c1c;
+            transform: translateX(4px);
         }
 
         .location.priority-high {
-            border-left-color: #e74c3c;
-            background: #ffebee;
+            border-left-color: #b91c1c;
+            background: rgba(185, 28, 28, 0.1);
+            box-shadow: 0 4px 12px rgba(185, 28, 28, 0.2);
         }
 
         .location-address {
-            font-weight: bold;
-            font-size: 10pt;
-            color: #1e3a5f;
-            margin-bottom: 4px;
+            font-weight: 600;
+            font-size: 1rem;
+            color: white;
+            margin-bottom: 0.5rem;
         }
 
         .location-address .star {
-            color: #e74c3c;
-            margin-right: 3px;
+            color: #fbbf24;
+            margin-right: 0.25rem;
         }
 
         .location-detail {
-            margin: 3px 0;
-            padding-left: 12px;
+            margin: 0.25rem 0;
+            padding-left: 1rem;
             position: relative;
+            color: #d1d5db;
         }
 
         .location-detail:before {
-            content: "•";
+            content: "▸";
             position: absolute;
             left: 0;
-            color: #3498db;
+            color: #b91c1c;
+            font-weight: bold;
         }
 
         .location-detail strong {
-            color: #555;
+            color: #fbbf24;
         }
 
         .pro-tip {
-            background: #e8f5e9;
-            border-left: 3px solid #27ae60;
-            padding: 10px;
-            margin: 15px 0;
-            font-size: 9pt;
+            background: linear-gradient(135deg, rgba(185, 28, 28, 0.15) 0%, rgba(127, 29, 29, 0.15) 100%);
+            border-left: 4px solid #fbbf24;
+            padding: 1.25rem;
+            margin: 1.5rem 0;
+            font-size: 0.875rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(251, 191, 36, 0.1);
         }
 
         .pro-tip-title {
-            font-weight: bold;
-            color: #27ae60;
-            margin-bottom: 5px;
+            font-weight: 600;
+            color: #fbbf24;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .pro-tip {
+            color: #e5e5e5;
         }
 
         .footer {
-            margin-top: 30px;
-            padding-top: 15px;
-            border-top: 2px solid #ddd;
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 2px solid rgba(185, 28, 28, 0.3);
             text-align: center;
-            font-size: 9pt;
-            color: #666;
+            font-size: 0.875rem;
+            color: #9ca3af;
         }
 
         .footer-bold {
-            font-weight: bold;
-            color: #1e3a5f;
-            margin-bottom: 8px;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1rem;
         }
 
         .two-column {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 15px;
+            gap: 1.5rem;
         }
 
         @media print {
-            .two-column {
-                grid-template-columns: 1fr 1fr;
+            body {
+                background: white;
+                color: #333;
+            }
+            .header {
+                background: #b91c1c;
+            }
+            .location, .intro-box, .pro-tip {
+                background: #f9fafb;
             }
         }
+
+        /* Subtle holiday snowflakes */
+        .snowflake {
+            position: fixed;
+            color: rgba(251, 191, 36, 0.15);
+            font-size: 1.5rem;
+            animation: fall 10s linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes fall {
+            0% { transform: translateY(-10vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+        }
+
+        .snowflake:nth-child(1) { left: 10%; animation-delay: 0s; }
+        .snowflake:nth-child(2) { left: 20%; animation-delay: 2s; }
+        .snowflake:nth-child(3) { left: 30%; animation-delay: 4s; }
+        .snowflake:nth-child(4) { left: 40%; animation-delay: 6s; }
+        .snowflake:nth-child(5) { left: 50%; animation-delay: 8s; }
+        .snowflake:nth-child(6) { left: 60%; animation-delay: 1s; }
+        .snowflake:nth-child(7) { left: 70%; animation-delay: 3s; }
+        .snowflake:nth-child(8) { left: 80%; animation-delay: 5s; }
+        .snowflake:nth-child(9) { left: 90%; animation-delay: 7s; }
     </style>
 </head>
 <body>
+    <!-- Subtle holiday snowflakes -->
+    <div class="snowflake">❄</div>
+    <div class="snowflake">✨</div>
+    <div class="snowflake">❄</div>
+    <div class="snowflake">✨</div>
+    <div class="snowflake">❄</div>
+    <div class="snowflake">✨</div>
+    <div class="snowflake">❄</div>
+    <div class="snowflake">✨</div>
+    <div class="snowflake">❄</div>
+
     <div class="header">
-        <h1>🎄 Richmond Tacky Lights Driver's Guide 🎄</h1>
+        <h1>Richmond Tacky Lights Driver's Guide</h1>
         <div class="subtitle">Complete Route Reference with Insider Tips</div>
         <div class="tagline">15+ Years of Local Driver Experience</div>
     </div>
@@ -630,18 +721,11 @@
     <div class="footer">
         <div class="footer-bold">TNT LIMOUSINE - Richmond's Trusted Transportation Since 2008</div>
         <p>Want the VIP experience? Book a professional tacky lights tour!</p>
-        <p>📞 [INSERT PHONE] | 🌐 www.tntlimo.com | ✉️ info@tntlimo.com</p>
-        <p style="margin-top: 10px; font-size: 8pt;">
+        <p>📞 (804) 435-4225 | 🌐 tntlimousine.com | ✉️ sedan@tntauto.com</p>
+        <p style="margin-top: 10px; font-size: 0.75rem;">
             Coordinates are approximate. Always verify addresses with GPS. Display participation may vary by year.
             This guide is provided free as a community service. © 2024 TNT Limousine. All rights reserved.
         </p>
     </div>
-
-    <script>
-        // Auto-print functionality
-        // window.onload = function() {
-        //     window.print();
-        // }
-    </script>
 </body>
 </html>
