@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TNT Tacky Lights Popup - Example</title>
+    <style>
+        /* This is a demo/example for JTZ to see what the popup should look like */
+
+        body {
+            font-family: Arial, sans-serif;
+            padding: 40px;
+            background: #f5f5f5;
+        }
+
+        .demo-note {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .demo-note h2 {
+            margin-top: 0;
+            color: #856404;
+        }
+
+        /* POPUP OVERLAY */
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            padding: 20px;
+        }
+
+        /* POPUP CONTAINER */
+        .popup-container {
+            background: #0a0a0a;
+            border: 3px solid #C41E3A;
+            border-radius: 12px;
+            max-width: 600px;
+            width: 100%;
+            position: relative;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            animation: popupSlideIn 0.3s ease-out;
+        }
+
+        @keyframes popupSlideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* CLOSE BUTTON */
+        .popup-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: transparent;
+            border: none;
+            color: #ffffff;
+            font-size: 28px;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.3s;
+        }
+
+        .popup-close:hover {
+            background: #C41E3A;
+            transform: rotate(90deg);
+        }
+
+        /* POPUP HEADER */
+        .popup-header {
+            text-align: center;
+            padding: 40px 30px 20px;
+            border-bottom: 2px solid #333;
+        }
+
+        .popup-logo {
+            margin-bottom: 20px;
+        }
+
+        .popup-logo img {
+            height: 60px;
+            width: auto;
+        }
+
+        .popup-title {
+            font-size: 2em;
+            color: #ffffff;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .popup-subtitle {
+            font-size: 1.1em;
+            color: #cccccc;
+        }
+
+        /* POPUP CONTENT */
+        .popup-content {
+            padding: 30px;
+        }
+
+        .discount-box {
+            background: #1a1a1a;
+            border: 2px solid #C41E3A;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+
+        .discount-item {
+            display: flex;
+            align-items: center;
+            padding: 8px 0;
+            color: #ffffff;
+            font-size: 1.05em;
+        }
+
+        .discount-item:before {
+            content: "✓";
+            color: #C41E3A;
+            font-weight: bold;
+            font-size: 1.3em;
+            margin-right: 12px;
+        }
+
+        /* BUTTONS */
+        .popup-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .popup-btn {
+            padding: 16px 20px;
+            border: none;
+            border-radius: 6px;
+            font-size: 1.05em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            text-align: center;
+            display: block;
+        }
+
+        .popup-btn-primary {
+            background: #C41E3A;
+            color: #ffffff;
+        }
+
+        .popup-btn-primary:hover {
+            background: #a01828;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(196, 30, 58, 0.5);
+        }
+
+        .popup-btn-secondary {
+            background: #1a1a1a;
+            color: #ffffff;
+            border: 2px solid #C41E3A;
+        }
+
+        .popup-btn-secondary:hover {
+            background: #C41E3A;
+            transform: translateY(-2px);
+        }
+
+        /* FOOTER */
+        .popup-footer {
+            text-align: center;
+            padding: 0 30px 30px;
+            color: #999;
+            font-size: 0.9em;
+        }
+
+        .popup-footer .dont-show {
+            margin-top: 15px;
+            cursor: pointer;
+            color: #C41E3A;
+            text-decoration: underline;
+        }
+
+        .popup-footer .dont-show:hover {
+            color: #ffffff;
+        }
+
+        /* MOBILE */
+        @media (max-width: 600px) {
+            .popup-container {
+                margin: 10px;
+            }
+
+            .popup-title {
+                font-size: 1.5em;
+            }
+
+            .popup-buttons {
+                grid-template-columns: 1fr;
+            }
+
+            .popup-header {
+                padding: 30px 20px 15px;
+            }
+
+            .popup-content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-note">
+        <h2>🎯 TNT Tacky Lights Popup - Example for JTZ</h2>
+        <p><strong>This is a working example</strong> of what the popup should look like on the main TNT website.</p>
+        <p>Below you'll see the popup displayed. JTZ can use this as a reference for design and functionality.</p>
+        <p><strong>Technical Note:</strong> The popup should trigger 3 seconds after page load or on exit intent. It should use cookies to show only once per session.</p>
+    </div>
+
+    <!-- THE ACTUAL POPUP -->
+    <div class="popup-overlay" id="tackylightsPopup">
+        <div class="popup-container">
+            <!-- Close Button -->
+            <button class="popup-close" onclick="closePopup()">&times;</button>
+
+            <!-- Header -->
+            <div class="popup-header">
+                <div class="popup-logo">
+                    <!-- JTZ: Replace with actual TNT logo -->
+                    <img src="images/tnt-logo.png" alt="TNT Limousine">
+                </div>
+                <h2 class="popup-title">Richmond Tacky Lights Tours</h2>
+                <p class="popup-subtitle">Experience Richmond's Famous Holiday Lights in Luxury</p>
+            </div>
+
+            <!-- Content -->
+            <div class="popup-content">
+                <div class="discount-box">
+                    <div class="discount-item">5% OFF Monday-Thursday Tours</div>
+                    <div class="discount-item">10% OFF After Christmas</div>
+                    <div class="discount-item">Professional Chauffeur • Luxury Vehicles • All-Inclusive RATES</div>
+                </div>
+
+                <!-- Buttons -->
+                <div class="popup-buttons">
+                    <a href="https://www.tntlimousine.com/tacky-lights" class="popup-btn popup-btn-secondary">
+                        Get Free Route Guide
+                    </a>
+                    <a href="#booking" class="popup-btn popup-btn-primary">
+                        Book Your Tour Now
+                    </a>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="popup-footer">
+                <p>25+ Years Experience • Locally Owned & Operated</p>
+                <p class="dont-show" onclick="dontShowAgain()">Don't show this again</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Example JavaScript for popup functionality
+
+        function closePopup() {
+            document.getElementById('tackylightsPopup').style.display = 'none';
+        }
+
+        function dontShowAgain() {
+            // Set cookie to not show popup for 24 hours
+            document.cookie = "tnt_tackylights_popup=hidden; max-age=86400; path=/";
+            closePopup();
+            alert('Got it! We won\'t show this popup again today.');
+        }
+
+        // Close popup when clicking outside
+        document.getElementById('tackylightsPopup').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closePopup();
+            }
+        });
+
+        // Close popup with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closePopup();
+            }
+        });
+
+        /*
+        ===============================================
+        IMPLEMENTATION NOTES FOR JTZ:
+        ===============================================
+
+        1. TRIGGER CONDITIONS:
+           - Show popup 3 seconds after page load
+           - OR show on exit intent (mouse leaving viewport)
+           - Check cookie first: if "tnt_tackylights_popup" exists, don't show
+
+        2. PAGES TO SHOW ON:
+           - Homepage (tntlimousine.com)
+           - Main service pages
+           - NOT on: /tacky-lights page (they're already there)
+
+        3. TRACKING (if analytics available):
+           - Track impression: popup_shown
+           - Track clicks: popup_guide_clicked, popup_book_clicked
+           - Track close method: popup_closed_x, popup_closed_overlay, popup_dont_show
+
+        4. MOBILE CONSIDERATIONS:
+           - Don't show on screens < 500px width (too intrusive)
+           - OR use a simpler banner instead of popup
+
+        5. BUTTON LINKS TO UPDATE:
+           - "Get Free Route Guide" → https://www.tntlimousine.com/tacky-lights
+           - "Book Your Tour Now" → [INSERT ACTUAL BOOKING URL]
+             If no booking system: link to contact form with subject="Tacky Lights Tour Booking"
+
+        6. PROMO CODE (if applicable):
+           - Code: TACKYLIGHTS2024
+           - 5% off Monday-Thursday tours
+           - 10% off after Christmas (Dec 26-31)
+           - Valid through December 31, 2024
+
+        */
+    </script>
+</body>
+</html>

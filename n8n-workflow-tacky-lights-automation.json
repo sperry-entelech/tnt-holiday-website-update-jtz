@@ -1,0 +1,235 @@
+{
+  "name": "TNT Tacky Lights Lead Automation",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "tacky-lights-lead",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "webhook-trigger",
+      "name": "Webhook - Form Submission",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [250, 300],
+      "webhookId": "tacky-lights-form"
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "operation": "append",
+        "sheetId": "YOUR_SHEET_ID_HERE",
+        "range": "Sheet1!A:K",
+        "options": {}
+      },
+      "id": "google-sheets-append",
+      "name": "Save to Google Sheets",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 2,
+      "position": [450, 200],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "YOUR_GOOGLE_CREDENTIALS_ID",
+          "name": "Google Sheets Account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "fromEmail": "info@tntlimo.com",
+        "toEmail": "={{ $json.email }}",
+        "subject": "Your Richmond Tacky Lights Insider's Guide 🎄✨",
+        "emailType": "html",
+        "message": "<!DOCTYPE html>\n<html>\n<head>\n  <style>\n    body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }\n    .header { background: #1e3a5f; color: white; padding: 20px; text-align: center; }\n    .content { padding: 20px; }\n    .download-box { background: #f8f9fa; border-left: 4px solid #3498db; padding: 15px; margin: 20px 0; }\n    .cta-button { background: #3498db; color: white; padding: 12px 24px; text-decoration: none; border-radius: 5px; display: inline-block; margin: 10px 0; }\n    .footer { background: #f8f9fa; padding: 20px; text-align: center; font-size: 0.9em; color: #666; }\n  </style>\n</head>\n<body>\n  <div class=\"header\">\n    <h1>🎄 Your Tacky Lights Guide is Ready!</h1>\n  </div>\n  \n  <div class=\"content\">\n    <p>Hi {{ $json.firstName }},</p>\n    \n    <p>Thanks for requesting our Richmond Tacky Lights Insider's Guide! Your free guide is ready - here are your downloads:</p>\n    \n    <div class=\"download-box\">\n      <h3>📍 DRIVER'S INSIDER GUIDE (PDF)</h3>\n      <p>All 61 locations organized by neighborhood, with exact parking spots and traffic timing from our experienced drivers.</p>\n      <a href=\"https://www.tntlimo.com/downloads/tacky-lights/TNT-Drivers-Guide.pdf\" class=\"cta-button\">Download Guide</a>\n    </div>\n    \n    <div class=\"download-box\">\n      <h3>✅ PRINTABLE CHECKLIST (PDF)</h3>\n      <p>Track which displays you've seen and take notes about your favorites!</p>\n      <a href=\"https://www.tntlimo.com/downloads/tacky-lights/TNT-Checklist.pdf\" class=\"cta-button\">Download Checklist</a>\n    </div>\n    \n    <div class=\"download-box\">\n      <h3>🗺️ INTERACTIVE MAP</h3>\n      <p>Click each location for details about parking, timing, and display features.</p>\n      <a href=\"https://www.tntlimo.com/downloads/tacky-lights/interactive-map.html\" class=\"cta-button\">Open Map</a>\n    </div>\n    \n    <h3>What Makes Our Guide Different:</h3>\n    <p>These aren't just addresses copied from the internet. Our drivers have been navigating Richmond's tacky lights routes for 15+ years. We know:</p>\n    <ul>\n      <li>Where to park at Wendhurst without sitting in traffic for 30 minutes</li>\n      <li>Why you should avoid Pump Road between 7-8 PM</li>\n      <li>Which houses require walking vs. drive-by viewing</li>\n      <li>The optimal route through each neighborhood</li>\n    </ul>\n    <p><strong>This is real local knowledge you won't find anywhere else.</strong></p>\n    \n    <div style=\"background: #e8f5e9; border-left: 4px solid #27ae60; padding: 15px; margin: 20px 0;\">\n      <h3 style=\"color: #27ae60;\">Want the VIP Experience?</h3>\n      <p>Skip the driving, parking, and navigation - let us handle everything while you enjoy the lights in comfort!</p>\n      <p><strong>Our Tacky Lights Tours Include:</strong></p>\n      <ul>\n        <li>Professional chauffeur who knows every route</li>\n        <li>Luxury transportation (limousine, SUV, or party bus)</li>\n        <li>Curated route hitting all the must-see displays</li>\n        <li>2-3 hour fully guided experience</li>\n        <li>Stops at major displays (Wendhurst, Dawnridge Court, etc.)</li>\n        <li>Complimentary beverages</li>\n        <li>Perfect for families, date nights, or corporate events</li>\n      </ul>\n      <a href=\"https://www.tntlimo.com/book\" class=\"cta-button\" style=\"background: #27ae60;\">Book Your Tour</a>\n    </div>\n    \n    <h3>📅 Tour Season Dates:</h3>\n    <p>\n      <strong>Thanksgiving Weekend (Nov 23) through New Year's Eve (Dec 31)</strong><br>\n      Most houses are lit from 5:30 PM - 10:00 PM<br>\n      Peak viewing: 7:00 PM - 9:00 PM (expect crowds at major displays)<br>\n      <em>Tours available every night except Christmas Eve and Christmas Day.</em>\n    </p>\n    \n    <p>Questions about specific locations? Just reply to this email - our team has driven every street on this list dozens of times.</p>\n    \n    <p>Enjoy the lights!<br>\n    <strong>The TNT Limousine Team</strong><br>\n    Richmond's Trusted Transportation Since 2008</p>\n    \n    <p style=\"font-size: 0.9em; color: #666; margin-top: 30px;\">\n      <strong>P.S.</strong> Don't forget to check out Wendhurst (9716 Wendhurst Dr) - it's one of the most famous displays in the country with 200,000+ lights! Park at Wendhurst Elementary and walk 2 blocks. Arrive before 7 PM or after 9:30 PM to avoid the biggest crowds.\n    </p>\n  </div>\n  \n  <div class=\"footer\">\n    <p><strong>TNT Limousine</strong><br>\n    [Your Address Here]<br>\n    [Your Phone Number]<br>\n    www.tntlimo.com</p>\n    <p style=\"font-size: 0.8em; margin-top: 15px;\">© 2024 TNT Limousine. All rights reserved.</p>\n  </div>\n</body>\n</html>",
+        "options": {
+          "allowUnauthorizedCerts": false
+        }
+      },
+      "id": "send-customer-email",
+      "name": "Send Customer Email",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2,
+      "position": [450, 400],
+      "credentials": {
+        "smtp": {
+          "id": "YOUR_SMTP_CREDENTIALS_ID",
+          "name": "RichWeb SMTP"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "fromEmail": "website@tntlimo.com",
+        "toEmail": "YOUR_TNT_EMAIL@example.com",
+        "subject": "🔔 New Tacky Lights Lead: {{ $json.firstName }} {{ $json.lastName }}",
+        "emailType": "text",
+        "message": "NEW TACKY LIGHTS GUIDE REQUEST\n\nSubmitted: {{ $now.toFormat('yyyy-MM-dd HH:mm:ss') }}\n\nCONTACT INFORMATION:\n--------------------\nName: {{ $json.firstName }} {{ $json.lastName }}\nEmail: {{ $json.email }}\nPhone: {{ $json.phone }}\n\nTOUR INTEREST:\n--------------------\nPreferred Date: {{ $json.tourDate || 'Not specified' }}\nGroup Size: {{ $json.groupSize || 'Not specified' }}\nInterested in Booking Tour: {{ $json.tour_interest === 'yes' ? 'YES ✓' : 'NO' }}\n\nLEAD PRIORITY:\n--------------------\n{{ $json.tour_interest === 'yes' && $json.tourDate && $json.groupSize ? '🔥 HIGH PRIORITY - Ready to book!' : ($json.tour_interest === 'yes' ? '⭐ MEDIUM PRIORITY - Interested, needs follow-up' : '📋 LOW PRIORITY - Information only') }}\n\nACTION NEEDED:\n--------------------\n{{ $json.tour_interest === 'yes' && $json.tourDate && $json.groupSize ? 'Follow up within 24 hours to discuss booking and availability.' : ($json.tour_interest === 'yes' ? 'Follow up within 2-3 days to gauge interest and provide more information.' : 'They'll receive the guide automatically. Follow up in 3-5 days if no response.') }}\n\nAUTO-RESPONSE SENT:\n--------------------\n✓ Customer received PDF guide links automatically at {{ $json.email }}\n\nLEAD SOURCE: Tacky Lights Landing Page (tntlimo.com/tacky-lights)\n",
+        "options": {}
+      },
+      "id": "notify-tnt-team",
+      "name": "Notify TNT Team",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2,
+      "position": [450, 600],
+      "credentials": {
+        "smtp": {
+          "id": "YOUR_SMTP_CREDENTIALS_ID",
+          "name": "RichWeb SMTP"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "unit": "days",
+        "amount": 1
+      },
+      "id": "wait-1-day",
+      "name": "Wait 1 Day",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [650, 400]
+    },
+    {
+      "parameters": {
+        "fromEmail": "info@tntlimo.com",
+        "toEmail": "={{ $json.email }}",
+        "subject": "Ready to Book Your Tacky Lights Tour?",
+        "emailType": "html",
+        "message": "<!DOCTYPE html>\n<html>\n<head>\n  <style>\n    body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }\n    .content { padding: 20px; max-width: 600px; margin: 0 auto; }\n    .cta-box { background: #3498db; color: white; padding: 20px; text-align: center; border-radius: 8px; margin: 20px 0; }\n    .cta-button { background: white; color: #3498db; padding: 12px 24px; text-decoration: none; border-radius: 5px; display: inline-block; font-weight: bold; }\n  </style>\n</head>\n<body>\n  <div class=\"content\">\n    <p>Hi {{ $json.firstName }},</p>\n    \n    <p>Yesterday you downloaded our Richmond Tacky Lights Guide. Have you had a chance to review the routes?</p>\n    \n    <p>If you're thinking about doing the tour yourself, that's great! But if you want to skip the hassle and enjoy the experience in luxury, we'd love to help.</p>\n    \n    <div class=\"cta-box\">\n      <h2>Why Book a Professional Tour?</h2>\n      <ul style=\"text-align: left; line-height: 1.8;\">\n        <li>No driving, parking, or navigation stress</li>\n        <li>Our drivers know the optimal route and timing</li>\n        <li>Luxury vehicle with comfortable seating</li>\n        <li>Perfect for special occasions or family time</li>\n        <li>Complimentary beverages included</li>\n      </ul>\n      <a href=\"https://www.tntlimo.com/book\" class=\"cta-button\">Check Availability</a>\n    </div>\n    \n    <p>Questions? Just reply to this email or call us at [YOUR PHONE].</p>\n    \n    <p>Happy Holidays!<br>\n    <strong>TNT Limousine</strong></p>\n  </div>\n</body>\n</html>",
+        "options": {}
+      },
+      "id": "follow-up-day-1",
+      "name": "Follow-up Email Day 1",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2,
+      "position": [850, 400],
+      "credentials": {
+        "smtp": {
+          "id": "YOUR_SMTP_CREDENTIALS_ID",
+          "name": "RichWeb SMTP"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "unit": "days",
+        "amount": 6
+      },
+      "id": "wait-6-more-days",
+      "name": "Wait 6 More Days",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [1050, 400]
+    },
+    {
+      "parameters": {
+        "fromEmail": "info@tntlimo.com",
+        "toEmail": "={{ $json.email }}",
+        "subject": "Last Chance: Book Your Richmond Tacky Lights Tour",
+        "emailType": "html",
+        "message": "<!DOCTYPE html>\n<html>\n<head>\n  <style>\n    body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }\n    .content { padding: 20px; max-width: 600px; margin: 0 auto; }\n    .urgent-box { background: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; margin: 20px 0; }\n  </style>\n</head>\n<body>\n  <div class=\"content\">\n    <p>Hi {{ $json.firstName }},</p>\n    \n    <div class=\"urgent-box\">\n      <strong>⚠️ Tour dates are filling up fast!</strong><br>\n      Peak weekends (Dec 15-23) are already booking out.\n    </div>\n    \n    <p>We hope you've been enjoying planning your tacky lights route with our guide! This is just a friendly reminder that if you'd like to book a professional tour, now's the time.</p>\n    \n    <p><strong>What's still available:</strong></p>\n    <ul>\n      <li>Weeknight tours (Mon-Thu)</li>\n      <li>Early December dates</li>\n      <li>Post-Christmas availability</li>\n    </ul>\n    \n    <p>Even if you're planning to drive yourself, we're here if you have any questions about the routes or specific displays.</p>\n    \n    <p>To book or check availability:<br>\n    📞 Call: [YOUR PHONE]<br>\n    📧 Reply to this email<br>\n    🌐 Book online: <a href=\"https://www.tntlimo.com/book\">www.tntlimo.com/book</a></p>\n    \n    <p>Enjoy the season!<br>\n    <strong>TNT Limousine Team</strong></p>\n    \n    <p style=\"font-size: 0.9em; color: #666; margin-top: 30px;\">P.S. This is our last reminder email. You'll continue to get our regular newsletter, but we won't bug you specifically about tacky lights tours. 😊</p>\n  </div>\n</body>\n</html>",
+        "options": {}
+      },
+      "id": "follow-up-day-7",
+      "name": "Follow-up Email Day 7",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2,
+      "position": [1250, 400],
+      "credentials": {
+        "smtp": {
+          "id": "YOUR_SMTP_CREDENTIALS_ID",
+          "name": "RichWeb SMTP"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ { \"success\": true, \"message\": \"Thank you! Check your email for your tacky lights guide.\" } }}"
+      },
+      "id": "webhook-response",
+      "name": "Webhook Response",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [650, 300]
+    }
+  ],
+  "connections": {
+    "Webhook - Form Submission": {
+      "main": [
+        [
+          {
+            "node": "Save to Google Sheets",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Send Customer Email",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Notify TNT Team",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Webhook Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Customer Email": {
+      "main": [
+        [
+          {
+            "node": "Wait 1 Day",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait 1 Day": {
+      "main": [
+        [
+          {
+            "node": "Follow-up Email Day 1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Follow-up Email Day 1": {
+      "main": [
+        [
+          {
+            "node": "Wait 6 More Days",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait 6 More Days": {
+      "main": [
+        [
+          {
+            "node": "Follow-up Email Day 7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {},
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2024-11-01T00:00:00.000Z",
+  "versionId": "1"
+}

@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TNT Limousine - Richmond Tacky Lights Checklist</title>
+    <style>
+        @media print {
+            body {
+                margin: 0;
+                padding: 15px;
+            }
+            .page-break {
+                page-break-after: always;
+            }
+            input[type="checkbox"] {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.3;
+            color: #333;
+            max-width: 8.5in;
+            margin: 0 auto;
+            padding: 0.5in;
+            background: white;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 15px;
+            padding-bottom: 12px;
+            border-bottom: 3px solid #1e3a5f;
+        }
+
+        .header h1 {
+            font-size: 20pt;
+            color: #1e3a5f;
+            margin-bottom: 5px;
+        }
+
+        .header .subtitle {
+            font-size: 11pt;
+            color: #666;
+            font-style: italic;
+        }
+
+        .stats-bar {
+            background: #f8f9fa;
+            padding: 10px;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            text-align: center;
+            font-size: 10pt;
+            border: 2px solid #3498db;
+        }
+
+        .stats-bar strong {
+            color: #e74c3c;
+            font-size: 14pt;
+        }
+
+        .instructions {
+            background: #fff3cd;
+            padding: 10px;
+            border-left: 4px solid #ffc107;
+            margin-bottom: 15px;
+            font-size: 9pt;
+        }
+
+        .neighborhood-section {
+            margin-bottom: 18px;
+        }
+
+        .neighborhood-header {
+            background: #1e3a5f;
+            color: white;
+            padding: 6px 10px;
+            font-size: 11pt;
+            font-weight: bold;
+            margin-bottom: 8px;
+            border-radius: 3px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .count-badge {
+            background: white;
+            color: #1e3a5f;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 9pt;
+        }
+
+        .checklist-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5px;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            padding: 5px;
+            border-bottom: 1px solid #eee;
+            font-size: 9pt;
+        }
+
+        .checklist-item input[type="checkbox"] {
+            margin-right: 8px;
+            margin-top: 2px;
+            width: 15px;
+            height: 15px;
+            flex-shrink: 0;
+            cursor: pointer;
+        }
+
+        .address-text {
+            flex: 1;
+            line-height: 1.4;
+        }
+
+        .address-main {
+            font-weight: bold;
+            color: #1e3a5f;
+        }
+
+        .address-zip {
+            color: #999;
+            font-size: 8pt;
+        }
+
+        .star {
+            color: #e74c3c;
+            margin-left: 4px;
+        }
+
+        .notes-section {
+            margin-top: 15px;
+            padding: 10px;
+            background: #f8f9fa;
+            border: 2px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .notes-section h3 {
+            font-size: 10pt;
+            margin-bottom: 8px;
+            color: #1e3a5f;
+        }
+
+        .notes-lines {
+            line-height: 1.8;
+        }
+
+        .notes-line {
+            border-bottom: 1px solid #ccc;
+            min-height: 20px;
+            margin-bottom: 8px;
+        }
+
+        .footer {
+            margin-top: 20px;
+            padding-top: 10px;
+            border-top: 2px solid #ddd;
+            text-align: center;
+            font-size: 8pt;
+            color: #666;
+        }
+
+        .progress-tracker {
+            background: #e8f5e9;
+            padding: 10px;
+            border-radius: 4px;
+            margin-top: 15px;
+            text-align: center;
+            font-size: 10pt;
+        }
+
+        .progress-tracker strong {
+            color: #27ae60;
+        }
+
+        @media print {
+            .checklist-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🎄 Richmond Tacky Lights Checklist 🎄</h1>
+        <div class="subtitle">Track Your Journey Through All 61 Locations!</div>
+    </div>
+
+    <div class="stats-bar">
+        <strong>61</strong> Amazing Displays | <strong>5</strong> Neighborhoods | <strong>1</strong> Incredible Experience
+    </div>
+
+    <div class="instructions">
+        <strong>How to Use:</strong> Print this checklist and check off each location as you visit. Use the notes section to record your favorites, best photo spots, or return next year! ⭐ = Must-See Display
+    </div>
+
+    <!-- HENRICO/WEST END -->
+    <div class="neighborhood-section">
+        <div class="neighborhood-header">
+            <span>🏘️ HENRICO / WEST END</span>
+            <span class="count-badge">11 locations</span>
+        </div>
+        <div class="checklist-grid">
+            <div class="checklist-item">
+                <input type="checkbox" id="loc1">
+                <label for="loc1" class="address-text">
+                    <span class="address-main">9604 Asbury Court<span class="star">⭐</span></span><br>
+                    <span class="address-zip">23229</span>
+                </label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="loc2">
+                <label for="loc2" class="address-text">
+                    <span class="address-main">7729 Brookside Road</span><br>
+                    <span class="address-zip">23229</span>
+                </label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="loc3">
+                <label for="loc3" class="address-text">
+                    <span class="address-main">1909 Cornell Ave</span><br>
+                    <span class="address-zip">23227</span>
+                </label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="loc4">
+                <label for="loc4" class="address-text">
+                    <span class="address-main">6812 Locust St</span><br>
+                    <span class="address-zip">23226</span>
+                </label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="loc5">
+                <label for="loc5" class="address-text">
+                    <span class="address-main">9625 Peppertree Drive</span><br>
+                    <span class="address-zip">23229</span>
+                </label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="loc6">
+                <label for="loc6" class="address-text">
+                    <span class="address-main">2601 Rudolph Road</span><br>
+                    <span class="address-zip">23294</span>
+                </label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="loc7">
+                <label for="loc7" class="address-text">
+                    <span class="address-main">7610 Sweetbriar Road</span><br>
+                    <span class="address-zip">23229</span>
+                </label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="loc8">
+                <label for="loc8" class="address-text">
+                    <span class="address-main">2334 Thousand Oaks Drive</span><br>
+                    <span class="address-zip">23233</span>
+                </label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="loc9">
+                <label for="loc9" class="address-text">
+                    <span class="address-main">2302 Wistar Court<span class="star">⭐</span></span><br>
+                    <span class="address-zip">23233 - 250,000+ lights!</span>
+                </label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="loc10">
+                <label for="loc10" class="address-text">
+                    <span class="address-main">2657 Laclede Ave</span><br>
+                    <span class="address-zip">23228</span>
+                </label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="loc11">
+                <label for="loc11" class="address-text">
+                    <span class="address-main">11601 Aprilbud Drive</span><br>
+                    <span class="address-zip">23233</span>
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <!-- GLEN ALLEN -->
+    <div class="neighborhood-section">
+        <div class="neighborhood-header">
+            <span>🌲 GLEN ALLEN</span>
+            <span class="count-badge">6 locations</span>
+        </div>
+        <div class="checklist-grid">
+            <div class="checklist-item">
+                <input type="checkbox" id="loc12">
+                <label for="loc12" class="address-text">
+                    <span class="address-main">9600 Dove Hollow Lane</span><br>
+                    <span class="address-zip">23060</span>
+                </label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="loc13">
+                <label for="loc13" class="address-text">
+                    <span class="address-main">1411 Pennsylvania Ave</span><br>
+                    <span class="address-zip">23060</span>
+                </label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="loc14">
+                <label for="loc14" class="address-text">
+                    <span class="address-main">5123 Reids Pointe Road</span><br>
+                    <span class="address-zip">23059</span>
+                </label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="loc15">
+                <label for="loc15" class="address-text">
+                    <span class="address-main">9013 Runyon Drive</span><br>
+                    <span class="address-zip">23060</span>
+                </label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="loc16">
+                <label for="loc16" class="address-text">
+                    <span class="address-main">9716 Wendhurst Drive<span class="star">⭐</span></span><br>
+                    <span class="address-zip">23060 - Christmas on Wendhurst!</span>
+                </label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="loc17">
+                <label for="loc17" class="address-text">
+                    <span class="address-main">9117 Castle Point Drive</span><br>
+                    <span class="address-zip">23060 - Castle theme</span>
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <!-- DOWNTOWN -->
+    <div class="neighborhood-section">
+        <div class="neighborhood-header">
+            <span>🏛️ DOWNTOWN / FAN DISTRICT</span>
+            <span class="count-badge">7 locations</span>
+        </div>
+        <div class="checklist-grid">
+            <div class="checklist-item">
+                <input type="checkbox" id="loc18">
+                <label for="loc18" class="address-text">
+                    <span class="address-main">1510 Grove Ave</span><br>
+                    <span class="address-zip">23220 - Historic Fan</span>
+                </label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="loc19">
+                <label for="loc19" class="address-text">
+                    <span class="address-main">3330 Hanover Ave</span><br>
+                    <span class="address-zip">23221</span>
+                </label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="loc20">
+                <label for="loc20" class="address-text">
+                    <span class="address-main">3307 Kensington Ave</span><br>
+                    <span class="address-zip">23221</span>
+                </label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="loc21">
+                <label for="loc21" class="address-text">
+                    <span class="address-main">8304 St. Charles Road</span><br>
+                    <span class="address-zip">23229</span>
+                </label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="loc22">
+                <label for="loc22" class="address-text">
+                    <span class="address-main">3325 Warner Road</span><br>
+                    <span class="address-zip">23225 - Southside</span>
+                </label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="loc23">
+                <label for="loc23" class="address-text">
+                    <span class="address-main">2200 Park Ave</span><br>
+                    <span class="address-zip">23220</span>
+                </label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="loc24">
+                <label for="loc24" class="address-text">
+                    <span class="address-main">900 Catherine St</span><br>
+                    <span class="address-zip">23220 - Oregon Hill</span>
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- CHESTERFIELD -->
+    <div class="neighborhood-section">
+        <div class="neighborhood-header">
+            <span>🌳 CHESTERFIELD</span>
+            <span class="count-badge">34 locations</span>
+        </div>
+        <div class="checklist-grid">
+            <div class="checklist-item">
+                <input type="checkbox" id="loc25">
+                <label for="loc25" class="address-text">
+                    <span class="address-main">1063 Adkins Road</span><br>
+                    <span class="address-zip">23235</span>
+                </label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="loc26">
+                <label for="loc26" class="address-text">
+                    <span class="address-main">4424 Belmar Drive</span><br>
+                    <span class="address-zip">23832 - Synchronized</span>
+                </label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="loc27">
+                <label for="loc27" class="address-text">
+                    <span class="address-main">4432 Belmar Drive</span><br>
+                    <span class="address-zip">23832 - Synchronized</span>
+                </label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="loc28">
+                <label for="loc28" class="address-text">
+                    <span class="address-main">7801 Bold Forbes Lane</span><br>
+                    <span class="address-zip">23832 - Brandermill</span>
+                </label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="loc29">
+                <label for="loc29" class="address-text">
+                    <span class="address-main">7302 Buck Rub Lane</span><br>
+                    <span class="address-zip">23832</span>
+                </label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="loc30">
+                <label for="loc30" class="address-text">
+                    <span class="address-main">10154 Carol Anne Road</span><br>
+                    <span class="address-zip">23832</span>
+                </label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="loc31">
+                <label for="loc31" class="address-text">
+                    <span class="address-main">5613 Charter Oak Drive</span><br>
+                    <span class="address-zip">23832</span>
+                </label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="loc32">
+                <label for="loc32" class="address-text">
+                    <span class="address-main">600 Coralview Terrace</span><br>
+                    <span class="address-zip">23236</span>
+                </label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="loc33">
+                <label for="loc33" class="address-text">
+                    <span class="address-main">12610 Dawnridge Court<span class="star">⭐</span></span><br>
+                    <span class="address-zip">23831 - Entire cul-de-sac!</span>
+                </label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="loc34">
+                <label for="loc34" class="address-text">
+                    <span class="address-main">12618 Dawnridge Court<span class="star">⭐</span></span><br>
+                    <span class="address-zip">23831 - Entire cul-de-sac!</span>
+                </label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="loc35">
+                <label for="loc35" class="address-text">
+                    <span class="address-main">9618 Dry Creek Road</span><br>
+                    <span class="address-zip">23832</span>
+                </label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="loc36">
+                <label for="loc36" class="address-text">
+                    <span class="address-main">8518 Erika Hill Drive</span><br>
+                    <span class="address-zip">23832</span>
+                </label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="loc37">
+                <label for="loc37" class="address-text">
+                    <span class="address-main">11512 Frederick Farms Circle</span><br>
+                    <span class="address-zip">23831</span>
+                </label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="loc38">
+                <label for="loc38" class="address-text">
+                    <span class="address-main">13807 Gallant Fox Drive</span><br>
+                    <span class="address-zip">23831</span>
+                </label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="loc39">
+                <label for="loc39" class="address-text">
+                    <span class="address-main">11912 Gardengate Road</span><br>
+                    <span class="address-zip">23831</span>
+                </label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="loc40">
+                <label for="loc40" class="address-text">
+                    <span class="address-main">303 Glenpark Lane</span><br>
+                    <span class="address-zip">23236</span>
+                </label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="loc41">
+                <label for="loc41" class="address-text">
+                    <span class="address-main">13207 Glenmeadow Court</span><br>
+                    <span class="address-zip">23831</span>
+                </label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="loc42">
+                <label for="loc42" class="address-text">
+                    <span class="address-main">11909 Hazelnut Branch Court</span><br>
+                    <span class="address-zip">23831</span>
+                </label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="loc43">
+                <label for="loc43" class="address-text">
+                    <span class="address-main">8419 Hunters Lake Place</span><br>
+                    <span class="address-zip">23832</span>
+                </label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="loc44">
+                <label for="loc44" class="address-text">
+                    <span class="address-main">10340 N. Donegal Road</span><br>
+                    <span class="address-zip">23832</span>
+                </label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="loc45">
+                <label for="loc45" class="address-text">
+                    <span class="address-main">5037 King Cotton Lane</span><br>
+                    <span class="address-zip">23832</span>
+                </label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="loc46">
+                <label for="loc46" class="address-text">
+                    <span class="address-main">2308 Krossridge Court</span><br>
+                    <span class="address-zip">23236</span>
+                </label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="loc47">
+                <label for="loc47" class="address-text">
+                    <span class="address-main">8511 Long Tom Court</span><br>
+                    <span class="address-zip">23832</span>
+                </label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="loc48">
+                <label for="loc48" class="address-text">
+                    <span class="address-main">2216 Millcrest Terrace</span><br>
+                    <span class="address-zip">23236</span>
+                </label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="loc49">
+                <label for="loc49" class="address-text">
+                    <span class="address-main">13813 Orchid Drive</span><br>
+                    <span class="address-zip">23831</span>
+                </label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="loc50">
+                <label for="loc50" class="address-text">
+                    <span class="address-main">11731 Parrish Creek Lane</span><br>
+                    <span class="address-zip">23831</span>
+                </label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="loc51">
+                <label for="loc51" class="address-text">
+                    <span class="address-main">12612 Queensgate Road</span><br>
+                    <span class="address-zip">23831</span>
+                </label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="loc52">
+                <label for="loc52" class="address-text">
+                    <span class="address-main">307 Rossmere Drive</span><br>
+                    <span class="address-zip">23236</span>
+                </label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="loc53">
+                <label for="loc53" class="address-text">
+                    <span class="address-main">14106 Shallowford Landing Ct</span><br>
+                    <span class="address-zip">23831</span>
+                </label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="loc54">
+                <label for="loc54" class="address-text">
+                    <span class="address-main">12630 Spring Run Road</span><br>
+                    <span class="address-zip">23831</span>
+                </label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="loc55">
+                <label for="loc55" class="address-text">
+                    <span class="address-main">11919 Swift Crossing Drive</span><br>
+                    <span class="address-zip">23831</span>
+                </label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="loc56">
+                <label for="loc56" class="address-text">
+                    <span class="address-main">8512 Tallion Way</span><br>
+                    <span class="address-zip">23832</span>
+                </label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="loc57">
+                <label for="loc57" class="address-text">
+                    <span class="address-main">5912 Walking Path Lane</span><br>
+                    <span class="address-zip">23832</span>
+                </label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="loc58">
+                <label for="loc58" class="address-text">
+                    <span class="address-main">15237 Willow Hill Lane</span><br>
+                    <span class="address-zip">23831</span>
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <!-- ASHLAND -->
+    <div class="neighborhood-section">
+        <div class="neighborhood-header">
+            <span>🌾 ASHLAND</span>
+            <span class="count-badge">3 locations</span>
+        </div>
+        <div class="checklist-grid">
+            <div class="checklist-item">
+                <input type="checkbox" id="loc59">
+                <label for="loc59" class="address-text">
+                    <span class="address-main">13404 Dyson Trail Circle</span><br>
+                    <span class="address-zip">23005</span>
+                </label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="loc60">
+                <label for="loc60" class="address-text">
+                    <span class="address-main">9241 Chotank Trail</span><br>
+                    <span class="address-zip">23005</span>
+                </label>
+            </div>
+            <div class="checklist-item">
+                <input type="checkbox" id="loc61">
+                <label for="loc61" class="address-text">
+                    <span class="address-main">13389 Slayden Circle</span><br>
+                    <span class="address-zip">23005</span>
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="progress-tracker">
+        <strong>PROGRESS TRACKER:</strong> Visited ____ of 61 locations | Favorite Display: ________________
+    </div>
+
+    <div class="notes-section">
+        <h3>📝 MY NOTES & FAVORITES</h3>
+        <div class="notes-lines">
+            <div class="notes-line"></div>
+            <div class="notes-line"></div>
+            <div class="notes-line"></div>
+            <div class="notes-line"></div>
+            <div class="notes-line"></div>
+            <div class="notes-line"></div>
+            <div class="notes-line"></div>
+            <div class="notes-line"></div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <strong>TNT LIMOUSINE</strong> | Richmond's Tacky Lights Experts Since 2008<br>
+        Want the VIP experience? Book a professional tour! | 📞 [INSERT PHONE] | 🌐 www.tntlimo.com<br>
+        © 2024 TNT Limousine. Use year after year - displays may vary. Enjoy the lights!
+    </div>
+
+    <script>
+        // Optional: Save checkbox state to localStorage for digital use
+        document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                localStorage.setItem(this.id, this.checked);
+                updateProgress();
+            });
+
+            // Load saved state
+            const saved = localStorage.getItem(checkbox.id);
+            if (saved === 'true') {
+                checkbox.checked = true;
+            }
+        });
+
+        function updateProgress() {
+            const total = document.querySelectorAll('input[type="checkbox"]').length;
+            const checked = document.querySelectorAll('input[type="checkbox"]:checked').length;
+            console.log(`Progress: ${checked}/${total} locations visited`);
+        }
+
+        // Auto-print functionality (uncomment if desired)
+        // window.onload = function() {
+        //     window.print();
+        // }
+    </script>
+</body>
+</html>
