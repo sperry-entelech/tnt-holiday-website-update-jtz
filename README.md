@@ -13,9 +13,8 @@ Implementation files for TNT website tacky light tours promotion.
 - **TNT-Drivers-Insider-Guide.html** - Driver tips guide
 - **TNT-Tacky-Lights-Checklist.html** - Tour checklist
 
-### Data & Automation
+### Data
 - **tacky-lights-database.json** - Location/route data
-- **n8n-workflow-tacky-lights-automation.json** - Booking automation workflow
 
 ### Assets
 - **images/** - All images and graphics
@@ -33,9 +32,6 @@ Convert HTML files to PDF for download offers
 
 ### 4. Interactive Map
 Upload `interactive-map.html` with `tacky-lights-database.json`
-
-### 5. Automation
-Import `n8n-workflow-tacky-lights-automation.json` into n8n
 
 ## Support
 Questions: sedan@tntauto.com
